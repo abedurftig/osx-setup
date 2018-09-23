@@ -18,6 +18,7 @@ git config --global --replace-all user.email dasnervtdoch@googlemail.com
 brew install awscli
 brew install kubectl
 brew install gradle
+brew install maven
 
 echo "Installing apps with Homebrew Cask"
 
@@ -35,6 +36,7 @@ apps=(
   java
   jetbrains-toolbox
   docker
+  slack
 )
 
 brew tap caskroom/cask
