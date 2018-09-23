@@ -19,9 +19,13 @@ brewapps=(
   maven
   terraform
   jenv
+  gettext
 )
 
 brew install ${brewapps[@]}
+
+echo "Enable envsubst"
+brew link --force gettext
 
 git config --global --replace-all user.name abedurftig
 git config --global --replace-all user.email dasnervtdoch@googlemail.com
