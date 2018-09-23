@@ -10,20 +10,26 @@ if test ! $(which brew); then
 fi
 
 echo "Installing applications with Homebrew"
-brew install git
+
+brewapps=(
+  git
+  awscli
+  kubectl
+  gradle
+  maven
+  terraform
+  jenv
+)
+
+brew install ${brewapps[@]}
 
 git config --global --replace-all user.name abedurftig
 git config --global --replace-all user.email dasnervtdoch@googlemail.com
 
-brew install awscli
-brew install kubectl
-brew install gradle
-brew install maven
-
 echo "Installing apps with Homebrew Cask"
 
 # Apps
-apps=(
+caskapps=(
   visual-studio-code
   firefox
   dashlane
@@ -42,10 +48,9 @@ apps=(
 brew tap caskroom/cask
 brew tap caskroom/versions
 
-brew cask install --appdir="/Applications" ${apps[@]}
+brew cask install --appdir="/Applications" ${caskapps[@]}
 
-echo "Installing applications with Homebrew"
-brew install jenv
+echo "Init jenv"
 eval "$(jenv init -)"
 
 echo "Clean up Homebrew"

@@ -21,6 +21,9 @@ defaults write com.apple.dock autohide-time-modifier -float 0
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
+# Setting the hostname for this computer
+sudo scutil --set HostName dasnervtdoch
+
 # Kill affected apps
 for app in "Dock" "Finder"; do
   killall "${app}" > /dev/null 2>&1
