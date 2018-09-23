@@ -12,6 +12,13 @@ fi
 echo "Installing applications with Homebrew"
 brew install git
 
+git config --global --replace-all user.name abedurftig
+git config --global --replace-all user.email dasnervtdoch@googlemail.com
+
+brew install awscli
+brew install kubectl
+brew install gradle
+
 echo "Installing apps with Homebrew Cask"
 
 # Apps
@@ -23,8 +30,11 @@ apps=(
   google-chrome
   dropbox
   spectacle
+  1password
   java8
   java
+  jetbrains-toolbox
+  docker
 )
 
 brew tap caskroom/cask
